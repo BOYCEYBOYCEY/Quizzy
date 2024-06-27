@@ -1,0 +1,146 @@
+﻿@model IEnumerable<Quizzy_Main.Models.Topic>
+@if (ViewBag.disp != null){
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.error('@ViewBag.disp');
+    </script>
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+    <link href="~/css/category.CSS" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/About.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="nav">
+        <a href="#home">
+            <img class="logoimg"
+                 src="~/Frontend/assets/Quizzylogo.svg"
+                 alt="logo" />
+        </a>
+        <div class="list-of-options">
+            <a class="list-item" style="text-decoration: none" href="/User/Homepage">Home</a>
+            <a class="list-item" style="text-decoration: none" href="/User/About">About</a>
+            <a class="list-item" style="text-decoration: none" href="/User/Contact">Contact</a>
+            <a class="list-item" style="text-decoration: none" href="/User/SelectQuiz">Quizzes</a>
+        </div>
+        <a asp-action="UserDetail">
+            <img class="profileimg"
+                 src="~/Frontend/assets/profile-img.svg"
+                 alt="profile" />
+        </a>
+    </div>
+
+    </div>
+    <form method="post">
+
+    
+    <div class="box2">
+        <h2>Choose Your Favorite<span style="color:#4E148C"> Quiz</span> <span style="color:#5863F8"> Category</span></h2>
+        
+        
+        <div class="buttons">
+                @{
+                    var i = 1;
+                }
+                @foreach (var obj in Model)
+                {
+                    <input type="button" style="color:#000;" class="categoryButton categoryButton-@i" value=@obj.TopicName />
+                    {
+                        i++;
+                    }
+                }
+        </div>
+
+        
+        <h2 class="diff-level-text">Choose <span style="color:#4E148C"> Difficulty</span> Level</h2>
+        <div class="ColoredButton">
+                <input style="border-width: 1.5px" type="button" class="difficultyButton easybtn db-1" value="Easy">
+                <input style="border-width: 1.5px" type="button" class="difficultyButton mediumbtn db-2" value="Medium">
+                <input style="border-width: 1.5px" type="button" class="difficultyButton hardbtn db-3" value="Hard">
+
+        </div>
+            <input type="hidden" id="selectedCategory" name="category" />
+            <input type="hidden" id="selectedDifficulty" name="difficulty" />
+           
+        <div class="StartQuiz">
+            
+            <input type="submit" class="StartQuiz" value="Start Quiz">
+        </div>
+
+    </div>
+
+    </form>
+
+
+    <script>
+       
+        function refreshCategoryElements() {
+            for (var i = 1; i <= @Model.Count(); i++){
+                document.querySelector(`.categoryButton-${i}`).style.borderWidth = '1.5px';
+                document.querySelector(`.categoryButton-${i}`).style.backgroundColor = 'rgba(88, 99, 248, 0.08)';
+            }
+        }
+
+        function refreshDifficultyButtons() {
+            for (var i = 1; i <= 3; i++) {
+                document.querySelector(`.db-${i}`).style.borderWidth = '1.5px';
+                document.querySelector(`.db-${i}`).style.backgroundColor = 'rgba(88, 99, 248, 0.08)';
+            }
+        }
+
+        for (var i = 1; i <= @Model.Count(); i++){
+            document.querySelector(`.categoryButton-${i}`).addEventListener('click', function (event) {
+                refreshCategoryElements();
+                event.target.style.borderWidth = '3px';
+                event.target.style.backgroundColor = 'blue';
+            });
+        };
+
+        document.querySelector(`.db-1`).addEventListener('click', function (e) {
+            refreshDifficultyButtons();
+            event.target.style.borderWidth = '3px';
+            event.target.style.backgroundColor = 'lightgreen';
+        });
+
+        document.querySelector(`.db-2`).addEventListener('click', function (e) {
+            refreshDifficultyButtons();
+            event.target.style.borderWidth = '3px';
+            event.target.style.backgroundColor = 'yellow';
+        });
+
+        document.querySelector(`.db-3`).addEventListener('click', function (e) {
+            refreshDifficultyButtons();
+            event.target.style.borderWidth = '3px';
+            event.target.style.backgroundColor = '#ff474c';
+        });
+
+        const categoryButtons = document.querySelectorAll('.categoryButton');
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                document.getElementById('selectedCategory').value = this.value;
+            });
+        });
+        
+        const difficultyButtons = document.querySelectorAll('.difficultyButton');
+        difficultyButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                document.getElementById('selectedDifficulty').value = this.value;
+            });
+        });
+    </script>
+
+</body>
+</html>

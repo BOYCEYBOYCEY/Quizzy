@@ -1,0 +1,96 @@
+﻿@{
+    Layout = null;
+}
+@model Quizzy_Main.Models.User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="~/css/homepage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <img class="logo" src="~/css/assets/logo.svg" alt="">
+        <div class="menu">
+            <ul class="nav-options">
+                <li><a style="text-decoration: none" href="/User/Homepage">Home</a></li>
+                <li><a style="text-decoration: none" href="/User/About">About</a></li>
+                <li><a style="text-decoration: none" href="/User/Contact">Contact</a></li>
+                <li><a style="text-decoration: none" href="/User/SelectQuiz">Quizzes</a></li>
+            </ul>
+        </div>
+        <div class="nav-options1">
+            <p>Hello<span>@Model.UserName</span></p>
+        </div>
+    </div>
+    <div class="hero">
+        <h1><span style="color: #5863F8;">Discover</span>, <span style="color: #4E148C;">Learn</span>, Triumph</h1>
+        <p>Dive into trivia adventures and uncover new knowledge with us!</p>
+        <button onclick="location.href='@Url.Action("SelectQuiz", "User")'" class="start-btn">Start Quiz</button>
+    </div>
+    <div class="categories">
+        <div class="card">
+            <img src="~/css/assets/math.svg" alt="">
+        </div>
+        <div class="card">
+            <img src="~/css/assets/science.svg" alt="">
+        </div>
+        <div class="card">
+            <img src="~/css/assets/art.svg" alt="">
+        </div>
+        <div class="card">
+            <img src="~/css/assets/coding.svg" alt="">
+        </div>
+    </div>
+    <div class="description">
+        <div class="left">
+            <h1>
+                <span style="color: #5863F8;">
+                    Beyond
+                </span> multiple
+            </h1>
+            <h1>choice</h1>
+            <div class="desc-list">
+                <div>
+                    <img src="~/css/assets/questionmark.svg" alt="" />
+                    Every Unique Question Type
+                </div>
+                <div>
+                    <img src="~/css/assets/lightning.svg" alt="" />
+                    Powerful Micro Motivators
+                </div>
+                <div>
+                    <img src="~/css/assets/reward.svg" alt="" />
+                    Low Stake Competitions
+                </div>
+            </div>
+
+        </div>
+        <div class="right">
+            <img style="height: 225px; width: 225px;" src="~/css/assets/boy.svg" alt="">
+        </div>
+    </div>
+    <div class="footer">
+        <div class="left">
+            <img style="height: 150px; width: 150px;" src="~/css/assets/mail.svg" alt="">
+        </div>
+        <div class="newsletter">
+            <img src="~/css/assets/bluelogo.svg">
+            <h1>Subscribe to our Newsletter</h1>
+            <div class="subscribe-input">
+                <input type="text" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+        </div>
+        <div class="right">
+            <img src="~/css/assets/redmail.svg" alt="">
+        </div>
+    </div>
+</body>
+</html>
+

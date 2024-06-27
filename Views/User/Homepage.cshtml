@@ -1,0 +1,127 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    Layout = null;
+}
+@model Quizzy_Main.Models.User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="~/css/homepage.css" />
+    <link rel="stylesheet" href="~/css/About.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <a href="#home">
+            <img class="logoimg"
+                 src="~/Frontend/assets/Quizzylogo.svg"
+                 alt="logo" />
+        </a>
+        <div class="list-of-options">
+            <a class="list-item" style="text-decoration: none" href="/User/Homepage">Home</a>
+            <a class="list-item" style="text-decoration: none" href="/User/About">About</a>
+            <a class="list-item" style="text-decoration: none" href="/User/Contact">Contact</a>
+            <a class="list-item" style="text-decoration: none" href="/User/SelectQuiz">Quizzes</a>
+        </div>
+       
+    
+        <div class="op-btns">
+            @{
+                if(@Model != null){
+                    <a style="text-decoration: none; color:blue; text-align:center; background-color:transparent;" href="/User/UserDetail">
+                        <div style="display:flex; justify-content: center; align-items: center; padding: 10px; border: 1px solid;">
+                            <img style="width: 30px" src="~/Frontend/assets/user-profile.svg" />
+                            <span style="font-size: 15px;">Hello, @Model.UserName</span>
+                        </div>
+                    </a>
+                    <img onclick="logout()" style="width: 35px; border: 1px solid blue; padding: 5px;" src="~/Frontend/assets/logout-30.png" />
+                    if(Model.UserRole.ToString().ToUpper() == "ADMIN"){
+                        <a class="op-btn" style="color:#fff;text-decoration: none;" class="btn-danger" href="/Admin/AddTopic">Go To Admin Dashboard</a>
+                    }
+                }else{
+                    <a class="op-btn" style="text-decoration:none;text-align:center; font-size:12px;border-radius:4px;" href="/User/Register" class="btn-filled reg-btn">Register</a>
+                    <a class="op-btn" style="text-decoration:none;text-align:center; font-size:12px;border-radius:4px;" href="/User/Login" class="btn-light login-btn">Login</a>
+                }
+            }
+        </div>
+    </div>
+    <div class="hero">
+        <h1>
+            &nbsp;
+        </h1>
+        <h1><span style="color: #5863F8;">Discover</span>, <span style="color: #4E148C;">Learn</span>, Triumph</h1>
+        <p>Dive into trivia adventures and uncover new knowledge with us!</p>
+        <a style="text-decoration:none" href="/User/SelectQuiz" class="start-btn">Start Quiz</a>
+    </div>
+    <div class="categories">
+        <div class="card">
+            <img src="~/css/assets/math.svg" alt="">
+        </div>
+        <div class="card">
+            <img src="~/css/assets/science.svg" alt="">
+        </div>
+        <div class="card">
+            <img src="~/css/assets/art.svg" alt="">
+        </div>
+        <div class="card">
+            <img src="~/css/assets/coding.svg" alt="">
+        </div>
+    </div>
+    <div class="description">
+        <div class="left">
+            <h1>
+                <span style="color: #5863F8;">
+                    Beyond
+                </span> multiple
+            </h1>
+            <h1>choice</h1>
+            <div class="desc-list">
+                <div>
+                    <img src="~/css/assets/questionmark.svg" alt="" />
+                    Every Unique Question Type
+                </div>
+                <div>
+                    <img src="~/css/assets/lightning.svg" alt="" />
+                    Powerful Micro Motivators
+                </div>
+                <div>
+                    <img src="~/css/assets/reward.svg" alt="" />
+                    Low Stake Competitions
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <img style="height: 225px; width: 225px;" src="~/css/assets/boy.svg" alt="">
+        </div>
+    </div>
+    <div class="footer">
+        <div class="left">
+            <img style="height: 150px; width: 150px;" src="~/css/assets/mail.svg" alt="">
+        </div>
+        <div class="newsletter">
+            <img src="~/css/assets/bluelogo.svg">
+            <h1>Subscribe to our Newsletter</h1>
+            <div>
+                <form class="subscribe-input" action="/User/Subscribe" method="post">
+                    <input class="sub-input" name="subscribeMail" type="text" placeholder="Enter your email">
+                    <input type="submit" style="text-decoration:none" class="sub-btn" value="Subscribe" />
+                </form>
+            </div>
+        </div>
+        <div class="right">
+            <img src="~/css/assets/redmail.svg" alt="">
+        </div>
+    </div>
+    <script>
+        function logout() {
+            window.location = "/User/Logout";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+body{
+  font-family: "Inter", sans-serif;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(88, 99, 248,0.2);
+       
+  }
+  #A{
+     text-align: center;
+  }
+  li {
+    display: inline;
+  }
+  .B {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* align-items: center; */
+    padding: 0 30px;
+    margin-top: 50px;
+  }
+  .login{
+    flex:0.5;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+
+  }
+  .login > h2, p{
+    text-align: center;
+    /* font-weight: 900; */
+  }
+  .login > p {
+    margin-top : -10px;
+    margin-left: -10px;
+  }
+  .log{
+    margin-left: -22px !important;
+    /* border: 1px solid; */
+    width: 350px;
+  }
+  .image{
+    flex:0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .image > img{
+    width: 400px;
+  }
+  .forget{
+    text-align: right;
+  }
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form > *{
+    margin-top: 10px;
+}
+
+.submit{
+    background-color:#5863F8;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 17px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.box{
+    
+    background-color:rgb(88, 99, 248,0.1);
+    border: none;
+    padding: 5px 10px;
+    /* opacity:0.1; */
+    color: rgb(0,0,0,1);
+    
+    
+    
+}
+.cancel{
+    padding: 5px 10px;
+    margin-top: 17px;
+    background-color: #fff;
+    color:#5863F8; 
+    border-color:#5863F8 ;
+    border-radius: 5px;
+}

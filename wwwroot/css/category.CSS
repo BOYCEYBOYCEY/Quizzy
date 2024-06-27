@@ -1,0 +1,189 @@
+body{
+    font-family: "Inter", sans-serif;
+  }
+.navbar{
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid rgb(88, 99, 248,0.2);
+}
+.navbar > img{
+    height: 50px;
+}
+.logo{
+    flex:0.2;
+}
+.menu{
+    flex:0.7;
+}
+.drop-down-arrow{
+    display: flex;
+    border-radius: 30px;
+    border: 1px solid;
+    width: 80px;
+    height: 40px;
+    padding: 3px;
+    margin-right: 50px;
+}
+.drop-down-arrow > img{
+    border: 1px solid;
+    border-radius: 100%;
+}
+.nav-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    color: #4E148C;
+}
+.menu{
+    margin-left: -10px;
+}
+.nav-options > *{
+    /* padding: 0 10px; */
+    margin-left: 35px;
+    cursor: pointer;
+    
+}
+.box2{
+    text-align: center;
+    
+ margin-top:30px;
+ 
+}
+.buttons{
+    margin-left: 300px;
+    margin-right:300px;
+}
+.buttons > .categoryButton{
+    background-color:rgba(88, 99, 248,0.08);
+    border-style: solid;
+    border-color: #5863F8;
+    border-radius:4px;
+    border-width: 1.5px;
+    color: #fff;
+    padding: 8px 32px;
+    margin: 8px 8px 8px 8px;
+    
+}
+
+    .buttons > .categoryButton:focus {
+        background-color: rgb(88, 99, 248);
+        color: white;
+        border: none;
+    }
+
+.Easy{
+    background-color:rgb(0, 199, 8,0.15);
+    border-style: solid;
+    border-color:#00C708;
+    border-radius:5px;
+    color: #00C708;
+    border-width:1.5px;
+    padding: 15px 20px;
+    margin-top: 17px;
+    margin: 0 0 14px 14px;
+}
+/* .Medium{
+    background-color:rgb(250, 255, 0,0.05);
+    border-style: solid;
+    border-color: #FAFF00;
+    border-radius:5px;
+    color: #FAFF00;
+    border-width:1.5px;
+    padding: 15px 20px;
+    margin-top: 17px;
+    margin: 0 0 14px 14px;
+} */
+.Medium {
+    background-color: rgba(250, 255, 0, 0.07);
+    border-style: solid;
+    border-color: #FAFF00;
+    border-radius: 5px;
+    color: #FAFF00;
+    border-width: 1.5px;
+    padding: 15px 20px;
+    margin-top: 17px;
+    margin: 0 0 14px 14px;
+}
+.Hard{
+    background-color:rgb(255, 46, 0,0.15);
+    border-style: solid;
+    border-color:#FF2E00;
+    border-radius:5px;
+    color: #FF2E00;
+    border-width:1.5px;
+    padding: 15px 20px;
+    margin-top: 17px;
+    margin: 0 0 14px 14px;
+}
+.StartQuiz > input{  
+    background-color: #4E148C;
+    color: white;
+    margin-top: 40px;
+    border-color:#4E148C ;
+    border-radius:5px ;
+    padding: 12px 64px;
+    border: none;
+    outline: none;
+}
+
+.diff-level-text {
+    margin-top: 32px;
+}
+
+.difficultyButton {
+    background-color: rgba(88, 99, 248,0.08);
+    border-style: solid;
+    border-color: #5863F8;
+    border-radius: 4px;
+    border-width: 1.5px;
+    color: #5863F8;
+    padding: 8px 28px;
+    margin: 8px 8px 8px 8px;
+    margin-top: 8px;
+}
+
+.ColoredButton > .easybtn {
+    border-color: rgb(0,204,0);
+    background: rgba(0,204,0,20%);
+    outline: 1.5px solid rgb(0,204,0);
+    color: rgb(0,204,0);
+}
+
+    .ColoredButton > .easybtn:focus {
+        border-color: rgb(0,204,0);
+        background: rgb(0,204,0);
+        color: white;
+        outline: 1.5px solid rgb(0,204,0);
+    }
+
+.ColoredButton > .mediumbtn {
+    border-color: rgb(255, 255, 0);
+    background: rgba(255, 255, 0, 20%);
+    outline: 1.5px solid rgb(255, 255, 0);
+    color: rgb(255, 255, 0);
+}
+
+    .ColoredButton > .mediumbtn:focus {
+        border-color: rgb(255, 255, 0);
+        background: rgb(255, 255, 0);
+        outline: 1.5px solid rgb(255, 255, 0);
+        color: white;
+    }
+
+.ColoredButton > .hardbtn {
+    border-color: rgb(255, 0, 0);
+    background: rgba(255, 0, 0, 20%);
+    outline: 1.5px solid rgb(255, 0, 0);
+    color: rgb(255, 0, 0);
+}
+
+    .ColoredButton > .hardbtn:focus {
+        border-color: rgb(255, 0, 0);
+        background: rgb(255, 0, 0);
+        outline: 1.5px solid rgb(255, 0, 0);
+        color: white;
+    }

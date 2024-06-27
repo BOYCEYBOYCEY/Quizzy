@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 2px solid rgba(78, 20, 140, 10%);
+    z-index: 10;
+    position: absolute;
+    top: 0%;
+    background-color: white;
+  }
+  
+  .nav .list-of-options {
+    display: flex;
+    margin: auto;
+    align-items: center;
+  }
+  
+  .nav .list-of-options .list-item {
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    padding: 0px 12px;
+    margin: 0px 12px;
+    color: #4e148c;
+    cursor: pointer;
+  }
+  
+  .logoimg {
+    width: 112px;
+    cursor: pointer;
+  }
+  
+  .profileimg {
+    width: 72px;
+    cursor: pointer;
+  }
+
+  .main-div{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .main-div .left {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 251, 255);
+  }
+
+  .main-div .right {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+.right > img {
+    width: 400px;
+    margin-top: 64px;
+}
+
+.main-div .left > form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    width: 70%;
+    margin-top:64px;
+}
+
+.left > form > .header-section{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.left > form > .header-section > p{
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 8px;
+    color: gray;
+}
+
+.left > form > .user-email-message {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.user-email-message .message{
+    margin-top: 16px;
+}
+
+.user-email-message .user-contact-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.user-contact-block > label{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.user-contact-block > input, textarea{
+    /* background-color: rgba(88, 99, 248, 5%);; */
+    outline: 1.5px solid rgba(88, 99, 248, 30%);
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+.user-contact-block > textarea{
+    resize: none;
+}
+
+.contact-us-btn{
+    width: 100%;
+    padding: 12px 0px;
+    background-color: rgba(88, 99, 248, 100%);
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 24px;
+}
+
+.contact-us-btn > span{
+    margin-right: 8px;
+}

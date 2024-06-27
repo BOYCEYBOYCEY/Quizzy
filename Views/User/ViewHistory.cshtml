@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Quizzy_Main.Models.Exam>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="~/css/About.css" />
+    <link rel="stylesheet" href="~/css/history.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <a href="#home">
+            <img class="logoimg"
+                 src="~/Frontend/assets/Quizzylogo.svg"
+                 alt="logo" />
+        </a>
+        <div class="list-of-options">
+            <a class="list-item" style="text-decoration: none" href="/User/Homepage">Home</a>
+            <a class="list-item" style="text-decoration: none" href="/User/About">About</a>
+            <a class="list-item" style="text-decoration: none" href="/User/Contact">Contact</a>
+            <a class="list-item" style="text-decoration: none" href="/User/SelectQuiz">Quizzes</a>
+        </div>
+        <a asp-action="UserDetail">
+            <img class="profileimg"
+                 src="~/Frontend/assets/profile-img.svg"
+                 alt="profile" />
+        </a>
+    </div>
+    <div class="menu">
+        <p>All Attempted Quiz</p>
+        <div>
+            <p>Sort By</p>
+            <button class=""> @Html.ActionLink("DATE","ViewHistory", new { sortOrder = "date" }) </button>
+            <button class=""> @Html.ActionLink("HIGH SCORE", "ViewHistory", new { sortOrder = "score"}) </button>
+        </div>
+    </div>
+    
+    <div class="completed-quizzes">
+        <div class="active-quiz-heading">
+            <!--<p>Completed Quizzes</p>-->
+            <!--<button>See All</button>-->
+        </div>
+        <div class="quiz-details">
+            @foreach(Exam obj in Model){
+                <div class="quiz-card" onclick=goto_result(@obj.ExamId)>
+                    <div>
+                        <img src="~/Frontend/assets/quizcard.png" alt="IMAGE HERE">
+                        <p class="quiz-topic">@ViewBag.t[Convert.ToInt32(@obj.TopicId)]</p>
+                    </div>
+                    <b>@ViewBag.t[Convert.ToInt32(obj.TopicId)]</b>
+                    <ul>
+                        <li>@obj.ExamDuration Minutes  - </li>
+                        <li>Score : @obj.Finalscore  -  </li>
+                        <li>@obj.DifficultyLevel</li>
+                        <li>@obj.ExamStartDateTime</li>
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+<script>
+    function goto_result(exId) {
+        window.location = `/User/Result/${exId}`;
+    }
+</script>
+</html>
+

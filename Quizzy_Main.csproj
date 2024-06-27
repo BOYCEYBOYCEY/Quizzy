@@ -1,0 +1,103 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\AddNewQuestion.css" />
+    <Content Remove="wwwroot\css\EditQuestion.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\AddNewQuestion.css" />
+    <None Include="wwwroot\css\EditQuestion.css" />
+    <None Include="wwwroot\Frontend\About.html" />
+    <None Include="wwwroot\Frontend\AddNewQuestion.css" />
+    <None Include="wwwroot\Frontend\AddNewQuestion.html" />
+    <None Include="wwwroot\Frontend\admin.css" />
+    <None Include="wwwroot\Frontend\admin.html" />
+    <None Include="wwwroot\Frontend\AllQuestions.html" />
+    <None Include="wwwroot\Frontend\assets\about1.svg" />
+    <None Include="wwwroot\Frontend\assets\about2.svg" />
+    <None Include="wwwroot\Frontend\assets\about3.svg" />
+    <None Include="wwwroot\Frontend\assets\about4.svg" />
+    <None Include="wwwroot\Frontend\assets\art.svg" />
+    <None Include="wwwroot\Frontend\assets\back.svg" />
+    <None Include="wwwroot\Frontend\assets\bluelogo.svg" />
+    <None Include="wwwroot\Frontend\assets\boy.svg" />
+    <None Include="wwwroot\Frontend\assets\coding.svg" />
+    <None Include="wwwroot\Frontend\assets\contactus.svg" />
+    <None Include="wwwroot\Frontend\assets\dilip.jpg" />
+    <None Include="wwwroot\Frontend\assets\fatal_error.png" />
+    <None Include="wwwroot\Frontend\assets\fatal_error.svg" />
+    <None Include="wwwroot\Frontend\assets\ishitwa.jpg" />
+    <None Include="wwwroot\Frontend\assets\lightning.svg" />
+    <None Include="wwwroot\Frontend\assets\login.svg" />
+    <None Include="wwwroot\Frontend\assets\logo.svg" />
+    <None Include="wwwroot\Frontend\assets\mail.svg" />
+    <None Include="wwwroot\Frontend\assets\man.png" />
+    <None Include="wwwroot\Frontend\assets\math.svg" />
+    <None Include="wwwroot\Frontend\assets\nikita.jpg" />
+    <None Include="wwwroot\Frontend\assets\profile-img.svg" />
+    <None Include="wwwroot\Frontend\assets\question.svg" />
+    <None Include="wwwroot\Frontend\assets\questionmark.svg" />
+    <None Include="wwwroot\Frontend\assets\quizcard.png" />
+    <None Include="wwwroot\Frontend\assets\Quizzylogo.svg" />
+    <None Include="wwwroot\Frontend\assets\redmail.svg" />
+    <None Include="wwwroot\Frontend\assets\resetpassword.svg" />
+    <None Include="wwwroot\Frontend\assets\reward.svg" />
+    <None Include="wwwroot\Frontend\assets\rishabh.png" />
+    <None Include="wwwroot\Frontend\assets\science.svg" />
+    <None Include="wwwroot\Frontend\assets\signup.svg" />
+    <None Include="wwwroot\Frontend\assets\spark.svg" />
+    <None Include="wwwroot\Frontend\assets\swatantra.jpg" />
+    <None Include="wwwroot\Frontend\assets\user-image.jpg" />
+    <None Include="wwwroot\Frontend\assets\vishal.jpg" />
+    <None Include="wwwroot\Frontend\category.CSS" />
+    <None Include="wwwroot\Frontend\category.html" />
+    <None Include="wwwroot\Frontend\celebration.png" />
+    <None Include="wwwroot\Frontend\congratulation.CSS" />
+    <None Include="wwwroot\Frontend\congratulation.html" />
+    <None Include="wwwroot\Frontend\Contact.html" />
+    <None Include="wwwroot\Frontend\EditQuestion.css" />
+    <None Include="wwwroot\Frontend\EditQuestion.html" />
+    <None Include="wwwroot\Frontend\history.css" />
+    <None Include="wwwroot\Frontend\history.html" />
+    <None Include="wwwroot\Frontend\homepage.css" />
+    <None Include="wwwroot\Frontend\homepage.html" />
+    <None Include="wwwroot\Frontend\Login.html" />
+    <None Include="wwwroot\Frontend\man2.png" />
+    <None Include="wwwroot\Frontend\oops.css" />
+    <None Include="wwwroot\Frontend\oops.html" />
+    <None Include="wwwroot\Frontend\question.css" />
+    <None Include="wwwroot\Frontend\question.html" />
+    <None Include="wwwroot\Frontend\Registerpage.CSS" />
+    <None Include="wwwroot\Frontend\Registerpage.html" />
+    <None Include="wwwroot\Frontend\Resetpassword.html" />
+    <None Include="wwwroot\Frontend\UserDetails.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.SessionState.SessionStateModule" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Web.RedisSessionStateProvider" Version="5.0.4" />
+    <PackageReference Include="serilog.aspnetcore" Version="8.0.1" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.3.0" />
+    <PackageReference Include="Serilog.Enrichers.Process" Version="2.0.2" />
+    <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="5.0.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>

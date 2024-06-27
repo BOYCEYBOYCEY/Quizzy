@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Quizzy_Main.Models.Question>
+
+
+@if (TempData["suc"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData["suc"]');
+    </script>
+
+}
+@if (TempData["error"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.error('@TempData["error"]');
+    </script>
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Question</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+          integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+          integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/AllQuestions.css" />
+</head>
+<body>
+    <div class="head-portion">
+        <div class="nav">
+            <a href="#home">
+                <img class="logoimg" src="./Quizzylogo.svg" alt="logo" />
+            </a>
+            <div class="list-of-options">
+                <a class="list-item" style="text-decoration: none" href="/User/Homepage">Home</a>
+                <a class="list-item" style="text-decoration: none" href="/User/About">About</a>
+                <a class="list-item" style="text-decoration: none" href="/User/Contact">Contact</a>
+                <a class="list-item" style="text-decoration: none" href="/User/SelectQuiz">Quizzes</a>
+            </div>
+            <a href="#profile">
+                <img class="profileimg" src="./profile.svg" alt="profile" />
+            </a>
+        </div>
+        <div class="button-tracking">
+            <button class="goto-dashboard" onclick="location.href='@Url.Action("AddTopic", "Admin")'" type="button">
+                <i class="ri-arrow-left-line"></i> Go to Dashboard
+            </button>
+            @{
+                OnlineExamPortalContext db = new OnlineExamPortalContext();
+                int t = ViewBag.topicId;
+                
+                <button class="goto-addquestion" type="button">
+                     <a style="text-decoration:none;color:white" href=@($"/Admin/AddQuestion/{t}")>
+                <i class="ri-add-fill"></i> Add Question
+                </a>
+                </button>
+                
+            }
+        </div>
+        <div class="heading-section">
+            <p class="all-questions">All Questions</p>
+            <button class="button">See All</button>
+        </div>
+    </div>
+    <div class="main-div">
+        @foreach(var obj in Model)
+        {
+            <div class="question-item">
+                <div class="question">
+                    <div class="question_id_with_text">
+                        <p class="question_id">@obj.QuestionId</p>
+                        <p class="question_text">@obj.Question1</p>
+                    </div>
+                    <div class="edit-delete-button">
+                        <button class="button-edit" onclick="location.href='@Url.Action("EditQuestion", "Admin",new {id=obj.QuestionId})'"><i class="ri-edit-circle-fill ri-sm"></i> Edit</button>
+                        <button class="button-delete" onclick="location.href='@Url.Action("DeleteQuestion", "Admin",new {id=obj.QuestionId})'"><i class="ri-delete-bin-6-line ri-sm"></i> Delete</button>
+                    </div>
+                </div>
+                <ul class="question-options">
+                    <li class="option-item"><p class="option-item-number">A.</p>@obj.Option1</li>
+                    <li class="option-item"><p class="option-item-number">B.</p>@obj.Option2</li>
+                    <li class="option-item"><p class="option-item-number">C.</p>@obj.Option3</li>
+                    <li class="option-item"><p class="option-item-number">D.</p>@obj.Option4</li>
+                </ul>
+            </div>
+        }
+    </div>
+</body>
+</html>

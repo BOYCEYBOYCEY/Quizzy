@@ -1,0 +1,81 @@
+﻿@model User
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="~/css/admin.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="nav">
+        <a href="#home">
+            <img class="logoimg"
+                 src="~/Frontend/assets/Quizzylogo.svg"
+                 alt="logo" />
+        </a>
+        <div class="list-of-options">
+            <a class="list-item" style="text-decoration: none" href="/User/Homepage">Home</a>
+            <a class="list-item" style="text-decoration: none" href="/User/About">About</a>
+            <a class="list-item" style="text-decoration: none" href="/User/Contact">Contact</a>
+            <a class="list-item" style="text-decoration: none" href="/User/SelectQuiz">Quizzes</a>
+        </div>
+        <a asp-action="UserDetail">
+            <img class="profileimg"
+                 src="~/Frontend/assets/profile-img.svg"
+                 alt="profile" />
+        </a>
+    </div>
+    <div class="heading" style="margin-top: 12px; margin-bottom: 12px;">
+        <p class="greeting">Welcome<span style="color: #5863F8;">, @Model.UserName</span></p>
+        <p class="desc">Elevating Your Website Management Experience.</p>
+    </div>
+    <div class="main">
+        <div class="left">
+            <div class="main-heading">
+                <p class="main-heading-txt">All Users</p>
+                <button class="main-btn">See All</button>
+            </div>
+            <div class="users-panel">
+                @foreach(User u in ViewBag.users){
+                    int i= 0;
+                    <div class="user-card">
+                        <div class="user-heading">
+                        <img src="~/css/assets/lightning.svg" alt="">
+                        <div class="user-details">
+                            <p class="user-name">@u.UserName</p>
+                                <p class="user-score">High Score: <span style="color: #5863F8;">@ViewBag.score[u.UserId]</span> points</p>
+                        </div>
+                    </div>
+                    <div class="user-btns">
+                            <a class="btn-details" style="text-decoration:none" asp-action="UserDetails" asp-route-id=@u.UserId>User Details</a>
+                       <a class="btn-history" style="text-decoration:none" asp-action="ViewHistory" asp-route-id=@u.UserId>Quiz History</a>
+                </div>
+                </div>
+                }
+            </div>
+        </div>
+        <div class="right">
+            <div class="main-heading">
+                <p class="main-heading-txt">All Categories</p>
+                <button class="main-btn">See All</button>
+            </div>
+            <form method="POST" class="add-category">
+                <input name="categoryName" class="add-category-input" type="text" placeholder="Enter Category" />
+                <button type="submit" class="add-category-btn">Add Category</button>
+            </form>
+            <p class="add-cat-note">*To add a question in any category, please select a category type</p>
+            <div class="categories">
+                @foreach (Topic t in ViewBag.topics)
+                {
+                    <a style="text-decoration:none" href=@($"/Admin/ViewQuestion/{t.TopicId}") class="btn-background">@t.TopicName</a>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

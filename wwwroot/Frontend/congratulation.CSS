@@ -1,0 +1,110 @@
+body{
+    font-family: "Inter", sans-serif;
+  }
+.navbar{
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid rgb(88, 99, 248,0.2);
+}
+.navbar > img{
+    height: 50px;
+}
+.logo{
+    flex:0.2;
+}
+.menu{
+    flex:0.7;
+}
+.drop-down-arrow{
+    display: flex;
+    border-radius: 30px;
+    border: 1px solid;
+    width: 80px;
+    height: 40px;
+    padding: 3px;
+    margin-right: 50px;
+}
+.drop-down-arrow > img{
+    border: 1px solid;
+    border-radius: 100%;
+}
+.nav-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    color: #4E148C;
+}
+.nav-options > *{
+    /* padding: 0 10px; */
+   
+    margin-left: 35px;
+    cursor: pointer;
+}
+.box2{
+    text-align: center;
+    
+      margin-top:30px;
+ 
+}
+.message{
+    margin-left:350px;
+    margin-right:350px;
+    font-size: 18px;
+}
+.celebration{
+    
+    flex:0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.celebration > img{
+    height: 250px;
+    
+}
+.Home
+{
+    background-color: #4E148C;
+    color: white;
+    margin-top: 17px;
+    border-color:#4E148C ;
+    border-radius:5px ;
+    padding: 15px 60px;
+    margin-right: 10px;
+}
+.Page
+{
+    background-color:#00C708;
+    color: white;
+    margin-top: 17px;
+    border-color:#00C708;
+    border-radius:5px ;
+    padding: 15px 60px;
+}
+    
+
+.buttons{
+    flex:0.5;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+}
+.message2{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.score{
+    
+    
+    text-align: center;
+}
+
+    
+      

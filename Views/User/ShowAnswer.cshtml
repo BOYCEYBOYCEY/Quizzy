@@ -1,0 +1,64 @@
+﻿@*
+For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Result>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+        integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+        integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Frontend/FinalResultPage.css" />
+</head>
+
+<body>
+    <div class="nav">
+        <a href="#home">
+            <img class="logoimg"
+                 src="~/Frontend/assets/Quizzylogo.svg"
+                 alt="logo" />
+        </a>
+        <div class="list-of-options">
+            <a class="list-item" style="text-decoration: none" href="/User/Homepage">Home</a>
+            <a class="list-item" style="text-decoration: none" href="/User/About">About</a>
+            <a class="list-item" style="text-decoration: none" href="/User/Contact">Contact</a>
+            <a class="list-item" style="text-decoration: none" href="/User/SelectQuiz">Quizzes</a>
+        </div>
+        <a href="/User/UserDetail">
+            <img class="profileimg"
+                 src="~/Frontend/assets/profile-img.svg"
+                 alt="profile" />
+        </a>
+    </div>
+    <div class="main-card">
+        <div class="pagename">
+            <a href="javascript: history.go(-1)"><i class="ri-arrow-left-circle-fill ri-2x"></i></a>
+            <h1>
+                Result Page
+            </h1>
+        </div>
+        <div class="question">
+            @foreach (Result r in Model)
+            {
+                <div class="main-question">
+                    <p class="question-id">@ViewBag.ques[Convert.ToInt32(r.QuestionId)]</p>
+                    <p class="@ViewBag.htmlcls[Convert.ToInt32(r.QuestionId)]">@r.SelectedOption</p>
+                    <p class="correct-option">@r.CorrectOption</p>
+                </div>
+            }
+        </div>
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,101 @@
+﻿@model Quizzy_Main.Models.Question
+
+@{
+    ViewData["Title"] = "EditQuestion";
+}
+
+
+
+@if (TempData["suc"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData["suc"]');
+    </script>
+
+}
+@if (TempData["error"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.error('@TempData["error"]');
+    </script>
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Question</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+          integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+          integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/AddNewQuestion.css" />
+</head>
+<body class="screen_size">
+
+    <form  method="post">
+
+        <input hidden asp-for="QuestionId" />
+        <input hidden asp-for="TopicId" />
+        <input hidden asp-for="DifficultyLevel" />
+        
+    
+    <div class="main_div">
+        <div class="heading_with_icon">
+            <h2>Edit Question</h2>
+            <i class="ri-close-circle-fill ri-lg"></i>
+        </div>
+        <div class="content">
+            <div class="question_input">
+                <textarea  asp-for="Question1" type="text" placeholder="Enter Question" rows="3" required></textarea>
+
+            </div>
+            <div class="options_input">
+                <input asp-for="Option1" type="text" placeholder="Option 1" required/>
+                    <span asp-validation-for="Option1" class="text-danger"></span>
+                <input asp-for="Option2" type="text" placeholder="Option 2" required/>
+                    <span asp-validation-for="Option2" class="text-danger"></span>
+                <input asp-for="Option3" type="text" placeholder="Option 3"  />
+                    <span asp-validation-for="Option3" class="text-danger"></span>
+                <input asp-for="Option4" type="text" placeholder="Option 4" />
+                    <span asp-validation-for="Option4" class="text-danger"></span>
+                <input asp-for="CorrectOption" type="text" placeholder="Correct Option" required />
+                    <span asp-validation-for="CorrectOption" class="text-danger"></span>
+            </div>
+            <div class="add_question_button">
+                <button type="submit">
+                    <i class="ri-add-fill"></i> <p>Edit question</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    </form>
+</body>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}
+
+</html>
+
+

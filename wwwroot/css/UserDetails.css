@@ -1,0 +1,178 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 2px solid rgba(78, 20, 140, 10%);
+}
+
+.nav .list-of-options {
+  display: flex;
+  margin: auto;
+  align-items: center;
+}
+
+.nav .list-of-options .list-item {
+  font-weight: bold;
+  align-items: center;
+  text-align: center;
+  padding: 0px 12px;
+  margin: 0px 12px;
+  color: #4e148c;
+  cursor: pointer;
+}
+
+.logoimg {
+  width: 112px;
+  cursor: pointer;
+
+}
+
+.profileimg {
+  width: 72px;
+  cursor: pointer;
+
+}
+
+.tagline-with-backicon {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 16px 24px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.tagline-with-backicon > p {
+  font-weight: bolder;
+  font-size: 24px;
+  margin: auto;
+}
+
+.tagline-with-backicon > i {
+  cursor: pointer;
+}
+
+.user-details-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  border-radius: 12px;
+  outline: 2px solid rgb(109, 117, 125, 20%);
+  padding: 24px;
+  margin: auto;
+  width: 540px;
+  margin-top: 40px;
+  background-color: rgba(108, 117, 125, 2%);
+}
+
+.image-with-some-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-with-some-details .left{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 500px;
+    outline: 2px solid #5863F8;
+
+}
+
+.image-with-some-details .left > img {
+    background-position: center;
+    width: 100%;
+    background-size: contain;
+}
+
+.image-with-some-details .right .name-with-role {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content:flex-start;
+    height: 60px;
+}
+
+.image-with-some-details .right .name-with-role > p{
+    color: #6C757D;
+    font-weight: 400;
+}
+
+.image-with-some-details .right > h3 > span{
+    color: #5863F8;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-info > p{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.contact-info .inside-contact-info {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+.inside-contact-info > p> span {
+    font-weight: bold;
+    color: black;
+}
+
+.inside-contact-info > p{
+    font-weight: 500;
+    color: #6C757D;
+}
+
+.on-user-action-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.on-user-action-buttons > button {
+    width: 100%;
+    color: white;
+}
+
+.on-user-action-buttons .delete-user{
+    padding: 10px 0px;
+    background-color: #FF2E00;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.on-user-action-buttons .all-attempted-quiz{
+    padding: 10px 0px;
+    background-color: #5863F8;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    margin-left: 12px;
+    cursor: pointer;
+}

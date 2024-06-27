@@ -1,0 +1,125 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 2px solid rgba(78, 20, 140, 10%);
+}
+
+    .nav .list-of-options {
+        display: flex;
+        margin: auto;
+        align-items: center;
+    }
+
+        .nav .list-of-options .list-item {
+            font-weight: bold;
+            align-items: center;
+            text-align: center;
+            padding: 0px 12px;
+            margin: 0px 12px;
+            color: #4e148c;
+            cursor: pointer;
+        }
+
+.logoimg {
+    width: 112px;
+    cursor: pointer;
+}
+
+.profileimg {
+    width: 72px;
+    cursor: pointer;
+}
+
+
+.main-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 24px;
+    justify-content: center;
+    align-content: center;
+}
+
+.main-card > h1 {
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.main-card > .question {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.main-question {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    border: 1px solid gray;
+    padding: 20px;
+    justify-content:flex-start;
+    width: 100%;
+}
+
+.question-id {
+    
+}
+
+.selected-option-wrong, .selected-option-right {
+    padding: 4px 20px 4px 8px;
+    border: 1px solid gray;
+}
+
+.selected-option-wrong {
+    background: red;
+    color: white;
+}
+
+.selected-option-right{
+    background: green;
+    color: white;
+}
+
+.correct-option {
+    padding: 4px 20px 4px 8px;
+    border: 1px solid gray;
+    background: green;
+    color: white;
+}
+
+.pagename {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    width: 80%;
+    align-items: center;
+    margin: auto;
+}
+
+.pagename > a {
+    text-decoration: none;
+}
+
+.pagename > a >i {
+    color: black;
+}

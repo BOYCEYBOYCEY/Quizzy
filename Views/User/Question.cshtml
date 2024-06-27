@@ -1,0 +1,115 @@
+﻿@model Question
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ</title>
+    <link rel="stylesheet" href="~/css/question.css">
+    <link rel="stylesheet" href="~/css/About.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <a href="#home">
+            <img class="logoimg"
+                 src="~/Frontend/assets/Quizzylogo.svg"
+                 alt="logo" />
+        </a>
+        <div class="list-of-options">
+            <a class="list-item" style="text-decoration: none" href="/User/Homepage">Home</a>
+            <a class="list-item" style="text-decoration: none" href="/User/About">About</a>
+            <a class="list-item" style="text-decoration: none" href="/User/Contact">Contact</a>
+            <a class="list-item" style="text-decoration: none" href="/User/SelectQuiz">Quizzes</a>
+        </div>
+    </div>
+    <div class="menu">
+        @* <p>Questions Attempted: <span style="color: #5863F8;">11</span> out of <span style="color: #5863F8;">24</span></p> *@
+        <div class="btns">
+            <button onclick="location.href='@Url.Action("Submit", "User")'" class="submit-btn">Submit</button>
+            <button class="end-btn" onclick="location.href='@Url.Action("Homepage","User")'">End Quiz</button>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="left">
+            <table cellspacing="20">
+                @{
+                    var i = 1;
+                    var attemptedQuestions = new List<int>();
+                }
+                @foreach (List<Question> obj in ViewBag.quesNavs)
+                {
+                    <tr class="row">
+                       
+                        @foreach(Question q in obj)
+                        {
+                            var color_class = "";
+                            if(q.QuestionId == Model.QuestionId)
+                            {
+                                color_class = "current";
+                            }
+                            else
+                            {
+                                if (attemptedQuestions.Contains(Model.QuestionId)) color_class = "attempted";
+                                else color_class = "not-attempted";
+                            }
+                            attemptedQuestions.Add(q.QuestionId);
+                            <td onclick="location.href='@Url.Action("Question", "User",new {id=q.QuestionId})'" class='@color_class'>@i </td>
+                            {
+                                i++;
+                            }
+                        }
+
+                    </tr>
+                    
+
+                }
+            </table>
+        </div>
+        <form method="post" >
+            <div class="right">
+                <p class="question">@Model.Question1</p>
+                <input type="button" class="optionButton" value="@Model.Option1"/>
+                <input type="button" class="optionButton" value="@Model.Option2" />
+                <input type="button" class="optionButton" value="@Model.Option3" />
+                <input type="button" class="optionButton" value="@Model.Option4" />
+                <button class="submit-btn2">Submit Answer</button>
+            </div> 
+            <input type="hidden" required id="selectedButton" name="selectedOption" />
+            <input type="hidden" id="correctOption" value="@Model.CorrectOption" name="correctOption" />
+            <input type="hidden" id="questionId" value="@Model.QuestionId" name="questionId" />
+        </form>
+
+        <script>
+
+            const optionButtons = document.querySelectorAll('.optionButton');
+            const submitBtn = document.querySelector('.submit-btn2');
+
+            //submitBtn.disabled = true;
+
+            optionButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    document.getElementById('selectedButton').value = this.value;
+                  
+                });
+            });
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

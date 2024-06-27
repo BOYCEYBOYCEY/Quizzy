@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid rgb(88, 99, 248,0.2);
+}
+
+.navbar > img{
+    height: 50px;
+}
+.logo{
+    flex:0.2;
+}
+.nav-menu{
+    flex:0.7;
+}
+.op-btns{
+    flex:0.2;
+}
+.nav-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.nav-options > *{
+    margin-left: 35px;
+    color: #4E148C;
+    cursor: pointer;
+}
+.profile{
+    display: flex;
+    border-radius: 30px;
+    border: 1px solid;
+    width: 80px;
+    height: 40px;
+    padding: 3px;
+    margin-right: 50px;
+}
+.profile > img{
+    border: 1px solid;
+    border-radius: 100%;
+}
+
+.oops{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.msg{
+    font-size: 50px;
+    color: #FF2E00;
+    font-weight: bold;
+}
+
+.desc{
+    color: #6C757D;
+    font-size: 20px;
+}
+
+.oops > img{
+    width: 225px;
+}
+
+.marks-sub{
+    font-size: 30px;
+}
+
+.percentage{
+    font-size: 40px;
+    font-weight: bold;
+    color: #FF2E00;
+}
+
+.btn{
+    color: #fff;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+.btn-home{
+    background-color: #4E148C;
+}
+
+.btn-retake{
+    background-color: #5863F8;
+}

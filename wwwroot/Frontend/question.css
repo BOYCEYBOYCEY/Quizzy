@@ -1,0 +1,149 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid rgb(88, 99, 248,0.2);
+}
+
+.navbar > img{
+    height: 50px;
+}
+.logo{
+    flex:0.2;
+}
+.nav-menu{
+    flex:0.7;
+}
+.op-btns{
+    flex:0.2;
+}
+.nav-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.nav-options > *{
+    margin-left: 35px;
+    color: #4E148C;
+    cursor: pointer;
+}
+
+.profile{
+    display: flex;
+    border-radius: 30px;
+    border: 1px solid;
+    width: 80px;
+    height: 40px;
+    padding: 3px;
+    margin-right: 50px;
+}
+.profile > img{
+    border: 1px solid;
+    border-radius: 100%;
+}
+
+.menu{
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu > p{
+    font-size: 20px;
+}
+
+.btns > button{
+    border: none;
+    padding: 15px 35px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.submit-btn{
+    background-color: #00C708;
+    color: #fff;
+}
+
+.end-btn{
+    background-color: #FF2E00;
+    color: #fff;
+}
+
+.panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row > *{
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.correct{
+    background-color: #00C708;
+}
+
+.selected{
+    background-color: #00C708 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.wrong{
+    background-color: #FF2E00;
+}
+
+.not-attempted{
+    background-color: rgb(88, 99, 248, 10%);
+}
+
+.current{
+    background-color: #5863F8;
+}
+
+.right{
+    margin-left: 100px;
+}
+
+.question{
+    margin-bottom: 50px;
+    font-size: 23px;
+}
+
+.quest-count{
+    box-sizing: border-box;
+    border: 1px solid;
+    padding: 10px;
+    margin: 10px;
+}
+
+.option{
+    width: 300px;
+    padding: 10px;
+    border-radius: 7px;
+    color: #5863F8;
+    border: 1px solid #5863F8;
+    background-color: rgb(88, 99, 248, 10%);
+}
+
+.submit-btn2{
+    width: 325px;
+    padding: 20px 25px;
+    border-radius: 7px;
+    background-color: #5863F8;
+    color: #fff;
+    border: none;
+}

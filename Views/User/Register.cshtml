@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="~/css/Registerpage.CSS">
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li style="float: left">
+                <a class="active" href="https://localhost:7117/User/Homepage">
+                    <img src="~/css/assets/back.svg">
+                </a>
+            </li>
+            <li id="A">
+                <img onclick="goto_homepage()" src="~/css/assets/Quizzylogo.svg">
+            </li>
+            <li style="float:right">
+                <a class="active" href="/User/About">
+                    <img src="~/css/assets/question.svg">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="B">
+        <div class="login">
+            <h2>Register</h2>
+            <p>User is our goal to take off to this quiz flight</p>
+            <form method="POST">
+                <label for="Username">Username</label>
+                <input class="box" type="text" name="username" placeholder="Enter the username" required>
+                <label for="Email">Email</label>
+                <input class="box" type="text" name="email" placeholder="Enter the email" required>
+                <label for="Password">Password</label>
+                <input class="box" type="password" name="password" placeholder="Enter the password" required>
+                <label for="phone">Phone</label>
+                <input class="box" type="tel" name="phone" placeholder="Enter the phone" required>
+                <input class="submit" type="submit" value="Register User">
+                <input class="cancel" type="button" value="Cancel" />
+            </form>
+        </div>
+        <div class="image">
+            <img src="~/css/assets/signup.svg">
+        </div>
+    </div>
+    <script>
+        function goto_homepage() {
+            window.location = "/User/Homepage";
+        }
+    </script>
+</body>
+</html>
